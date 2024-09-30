@@ -38,7 +38,7 @@
       "args": [
         "upload",
         "--data",
-        "${workspaceFolder}/test/data/specimen-result.json",
+        "${workspaceFolder}/test/data/specimen.bin",
         "--addr",
         "http://127.0.0.1:5080"
       ]

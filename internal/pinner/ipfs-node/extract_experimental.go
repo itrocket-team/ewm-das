@@ -111,9 +111,10 @@ func downloadCells(ctx context.Context, byteCells [][][]byte, ipfsNode *IPFSNode
 
 			// Insert the cell at the correct index and increment the count
 			if count < limit {
-				for z := 0; z < len(cellBytes); z++ {
+				n := len(cellBytes)
+				for z := 0; z < n; z++ {
 					copy(cellBytes[z][:], cell.Cell.Nested.Bytes[z*2048:(z+1)*2048])
-					byteCells[blobIndex][i*64+z] = cellBytes[z][:]
+					byteCells[blobIndex][i*n+z] = cellBytes[z][:]
 
 					count++
 				}
